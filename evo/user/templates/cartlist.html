@@ -1,0 +1,52 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+{% load static %}
+
+<style>
+  .parallax {
+  /* The image used */
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/913/602/514/mclaren-mso-defined-4-luxury-car-wallpaper-preview.jpg');
+
+  /* Full height */
+  height: 10%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+{% for i in cart %}
+
+<!-- <div class="parallax"></div>-->
+<div class="parallax"></div>
+<div class="p-5">
+        
+    <div class="border border-3 mt-5 shadow rounded row p-2">
+        <div class="col-4">
+            <img src="{{i.product.image.url}}" height="300px" alt="p_image">
+
+        </div>
+        <div class="col-8 align-items-center">
+            
+            <h1>{{i.product.title}}</h1>
+            <h3 style="color: green;">{{i.product.price}}</h3>
+            <h6>{{i.product.description}}</h6>
+            <h6>{{i.date}}</h6>
+            <a href="{% url 'porder' i.id %}" style="background-color: green;" class="btn btn-outline-light">Place order</a>
+            <a href="{% url 'cdelt' i.id %}" class="btn btn-outline-danger">
+                <i class="fa-solid fa-trash" style="color: #f50f1b;"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="parallax"></div>
+
+{%endfor%}
+{%endblock nav%}
+{% block foot %}
+{% endblock foot %}
+

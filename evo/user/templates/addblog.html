@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+<style>
+    .parallax {
+    /* The image used */
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/913/602/514/mclaren-mso-defined-4-luxury-car-wallpaper-preview.jpg');
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  </style>
+<div class="text-center">
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <table class="table table-info text-center">
+            <tr>
+                {{form.as_table}}
+            </tr>
+        </table>
+        <button class="btn btn-outline-light" style="background-color: blue;">Submit</button>
+
+    </form>
+</div>
+
+
+<div class="parallax"></div>
+
+
+
+{% endblock nav %}

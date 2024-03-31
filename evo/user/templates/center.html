@@ -1,0 +1,47 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+{% load static %}
+
+<style>
+  .parallax {
+  /* The image used */
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/913/602/514/mclaren-mso-defined-4-luxury-car-wallpaper-preview.jpg');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<div class="parallax"></div>
+{% for i in service %}
+<br><br><br><br><br>
+<div class="parallax"></div>
+
+<div class="p-5">
+        
+    <div class="border border-3 mt-5 shadow rounded row p-2">
+        <div class="col-4">
+            <img src="{{i.image.url}}" height="300px" alt="p_image">
+
+        </div>
+        <div class="col-8 align-items-center">
+            
+            <h1>{{i.title}}</h1>
+            <h6>{{i.address}}</h6>
+            <a href="{% url 'sdt' i.id %}" style="background-color: green;" class="btn btn-outline-light">View Details</a>
+        </div>
+
+    </div>
+</div>
+<div class="parallax"></div>
+
+
+{%endfor%}
+{%endblock nav%}
+{% block foot %}
+{% endblock foot %}

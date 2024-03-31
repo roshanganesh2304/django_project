@@ -1,0 +1,59 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+{% load static %}
+
+<style>
+  .parallax {
+  /* The image used */
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/913/602/514/mclaren-mso-defined-4-luxury-car-wallpaper-preview.jpg');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#hh1{
+                margin-right: 20px;
+                transition: transform 400ms;
+            }
+            #hh1:hover{
+                transform: scale(1.05);
+            }
+            #hh2{
+                margin-right: 20px;
+                transition: transform 400ms;
+            }
+            #hh2:hover{
+                transform: scale(1.05);
+            }
+</style>
+    <div class="row" style="position: absolute; top: 320px; left: 286px;">
+        <div class="card" style="width: 30rem; background-color: #adaaaa;" id="hh1">
+            <img src="{% static 'images/car.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h4 class="card-title" style="color:green ; text-align: center;">Cars</h4>
+                <a href="{% url 'sro' 'Cars' %}" class="stretched-link"></a>
+            </div>
+        </div>
+        <div class="card" style="width: 30rem; background-color: #adaaaa;" id="hh2">
+            <img src="{% static 'images/bike.png' %}" style="height: 260px;" class="card-img-top" alt="">
+            <div class="card-body">
+                <h4 class="card-title" style="color:#327dcf ; text-align: center;">Bikes</h4>
+                <a href="{% url 'sro' 'Bikes' %}" class="stretched-link"></a>
+            </div>
+     </div>
+        
+    </div>
+
+    
+</div>
+<div class="parallax"></div>
+
+
+{% endblock nav %}
+{% block foot %}
+{% endblock foot %}
